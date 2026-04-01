@@ -2,6 +2,26 @@
 
 **VanillaPDF** is a high-performance, privacy-first PDF editor forged in the fires of late-night coding and 90s anime aesthetics. It delivers essential PDF manipulation tools directly in your browser with a striking Dark/Red Manga/Cyberpunk design.
 
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
 ## The Mission
 
 Most PDF editors are bloated, slow, or compromise your privacy by uploading files to a server. VanillaPDF executes all operations **locally in your browser**. Your files never leave your machine.
@@ -27,28 +47,6 @@ Most PDF editors are bloated, slow, or compromise your privacy by uploading file
 - **Icons:** [Lucide React](https://lucide.dev/)
 - **Animations:** [Framer Motion](https://www.framer.com/motion/)
 
----
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
 ## Preview
 
 ### Landing Page
@@ -58,6 +56,8 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 ### Footer Section
 
 <img width="1841" height="918" alt="image" src="https://github.com/user-attachments/assets/93aa29e7-5a15-4621-96cc-be949bec6b25" />
+
+---
 
 ## License
 
