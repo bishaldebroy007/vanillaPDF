@@ -1,4 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# VanillaPDF | Manga Edition
+
+**VanillaPDF** is a high-performance, privacy-first PDF editor forged in the fires of late-night coding and 90s anime aesthetics. It delivers essential PDF manipulation tools directly in your browser with a striking Dark/Red Manga/Cyberpunk design.
+
+## The Mission
+
+Most PDF editors are bloated, slow, or compromise your privacy by uploading files to a server. VanillaPDF executes all operations **locally in your browser**. Your files never leave your machine.
+
+## Features
+
+- **Merge PDF (結合):** Combine multiple PDF files into one master document with ease.
+- **Split PDF (分割):** Extract pages or split your PDF into separate files instantly.
+- **PDF to Image (画像):** Convert each page of your PDF into high-quality PNG images.
+- **Compress PDF (圧縮):** Reduce file sizes without losing the "Main Character" energy.
+
+## Aesthetic
+
+- **Dark & Red Theme:** High-contrast, high-energy visuals for the ultimate editing experience.
+- **Manga Style:** Screentone patterns, speed lines, and bold Japanese typography (Kanji) integrated into the UI.
+- **Cyberpunk Transitions:** Sharp, energetic animations powered by `framer-motion`.
+
+## Built With
+
+- **Framework:** [Next.js 16 (App Router)](https://nextjs.org)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com)
+- **PDF Engine:** [pdf-lib](https://pdf-lib.js.org/) & [pdf.js](https://mozilla.github.io/pdf.js/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+
+---
 
 ## Getting Started
 
@@ -19,18 +48,3 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
