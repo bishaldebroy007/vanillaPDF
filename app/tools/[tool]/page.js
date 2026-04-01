@@ -139,12 +139,13 @@ export default function ToolPage({ params }) {
     const file = files[0];
     const arrayBuffer = await file.arrayBuffer();
     
-    // We need pdfjs-dist for this. Since it's a client-side library that often needs a worker,
-    // this part is more complex. I'll provide a basic implementation.
     const pdfjsLib = await import("pdfjs-dist/build/pdf");
-    pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
+    pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
     
-    const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
+    const loadingTask = pdfjsLib.getDocument({ 
+      data: arrayBuffer,
+      verbosity: 0
+    });
     const pdf = await loadingTask.promise;
     
     for (let i = 1; i <= pdf.numPages; i++) {
