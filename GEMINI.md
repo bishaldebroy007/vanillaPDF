@@ -21,12 +21,12 @@ This project is a modern Next.js application built with React 19 and Tailwind CS
 
 The project includes standard Next.js scripts for development, building, and production:
 
-| Task | Command | Description |
-| :--- | :--- | :--- |
-| **Development** | `pnpm dev` | Starts the development server at `http://localhost:3000` |
-| **Build** | `pnpm build` | Compiles the application for production |
-| **Start** | `pnpm start` | Runs the production server (requires a prior build) |
-| **Lint** | `pnpm lint` | Runs ESLint to check for code quality and style issues |
+| Task            | Command      | Description                                              |
+| :-------------- | :----------- | :------------------------------------------------------- |
+| **Development** | `pnpm dev`   | Starts the development server at `http://localhost:3000` |
+| **Build**       | `pnpm build` | Compiles the application for production                  |
+| **Start**       | `pnpm start` | Runs the production server (requires a prior build)      |
+| **Lint**        | `pnpm lint`  | Runs ESLint to check for code quality and style issues   |
 
 ## Development Conventions
 
@@ -38,3 +38,5 @@ The project includes standard Next.js scripts for development, building, and pro
   - `eslint.config.mjs`: ESLint configuration.
   - `postcss.config.mjs`: PostCSS configuration for Tailwind CSS.
   - `jsconfig.json`: JavaScript compiler options and path aliases.
+
+## Learn
