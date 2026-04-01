@@ -61,7 +61,7 @@ export default function Home() {
         </h1>
         <p className="text-xl md:text-3xl font-bold uppercase tracking-widest text-white/80 max-w-2xl mx-auto border-y-2 border-accent py-2 bg-black/40 backdrop-blur-sm">
           Ultimate PDF Manipulation{" "}
-          <span className="text-accent italic">Very First Edition!</span>
+          <span className="text-accent italic">Extreme Edition</span>
         </p>
       </motion.div>
 
@@ -75,7 +75,7 @@ export default function Home() {
           >
             <Link href={`/tools/${tool.id}`}>
               <div className="manga-card group p-8 flex flex-col items-center text-center h-full cursor-pointer overflow-hidden">
-                <div className="absolute top-[-20px] right-[-20px] text-8xl font-black text-black/5 select-none pointer-events-none group-hover:text-accent/10 transition-colors">
+                <div className="absolute top-5 right-5 text-8xl font-black text-black/5 select-none pointer-events-none group-hover:text-accent/10 transition-colors">
                   {tool.kanji}
                 </div>
 
