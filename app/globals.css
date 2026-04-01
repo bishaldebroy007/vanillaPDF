@@ -1,26 +1,81 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ffffff;
+  --accent: #ff0000;
+  --accent-muted: #8b0000;
+  --manga-border: 3px solid #000;
+  --manga-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 1);
+  --manga-shadow-red: 6px 6px 0px 0px rgba(255, 0, 0, 1);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-muted: var(--accent-muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Manga Screentone Effect */
+.screentone {
+  background-image: radial-gradient(circle, #222 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+
+.screentone-red {
+  background-image: radial-gradient(circle, #440000 1px, transparent 1px);
+  background-size: 3px 3px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Manga Components */
+.manga-card {
+  @apply bg-white text-black border-4 border-black relative transition-all duration-200;
+  box-shadow: var(--manga-shadow);
+}
+
+.manga-card:hover {
+  @apply translate-x-[-2px] translate-y-[-2px];
+  box-shadow: 8px 8px 0px 0px rgba(255, 0, 0, 1);
+}
+
+.manga-button {
+  @apply bg-accent text-white font-bold px-6 py-3 border-4 border-black uppercase tracking-widest relative;
+  box-shadow: 4px 4px 0px 0px #000;
+}
+
+.manga-button:hover {
+  @apply bg-white text-accent;
+  box-shadow: 6px 6px 0px 0px #000;
+}
+
+.manga-button:active {
+  @apply translate-x-[2px] translate-y-[2px];
+  box-shadow: 2px 2px 0px 0px #000;
+}
+
+.manga-title {
+  @apply text-accent font-black uppercase italic tracking-tighter text-6xl md:text-8xl mb-8;
+  -webkit-text-stroke: 2px white;
+  text-shadow: 8px 8px 0px #000;
+}
+
+/* Speed Lines Decorative Element */
+.speed-lines {
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 0, 0, 0.05) 10px,
+    rgba(255, 0, 0, 0.05) 11px
+  );
 }
