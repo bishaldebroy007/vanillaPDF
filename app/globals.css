@@ -19,6 +19,78 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* === Keyframe Animations === */
+
+@keyframes manga-burst {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.08); opacity: 1; }
+  70% { transform: scale(0.96); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes pulse-red {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4); }
+  50% { box-shadow: 0 0 20px 8px rgba(255, 0, 0, 0.15); }
+}
+
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-3px, 3px); }
+  40% { transform: translate(3px, -3px); }
+  60% { transform: translate(-2px, -2px); }
+  80% { transform: translate(2px, 2px); }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(40px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes speed-dash {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 100px; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes kanji-drift {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.03; }
+  50% { transform: translateY(-30px) rotate(3deg); opacity: 0.07; }
+}
+
+@keyframes border-pulse {
+  0%, 100% { border-color: rgba(255, 255, 255, 0.2); }
+  50% { border-color: var(--accent); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+@keyframes success-burst {
+  0% { transform: scale(0); opacity: 0; }
+  40% { transform: scale(1.2); opacity: 1; }
+  60% { transform: scale(0.9); }
+  80% { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes particle-float {
+  0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.6; }
+  50% { transform: translateY(-40px) translateX(20px) scale(1.5); opacity: 0.3; }
+  100% { transform: translateY(-80px) translateX(-10px) scale(0.5); opacity: 0; }
+}
+
 /* Manga Screentone Effect */
 .screentone {
   background-image: radial-gradient(circle, #222 1px, transparent 1px);
@@ -49,8 +121,27 @@ body {
 }
 
 .manga-button {
-  @apply bg-accent text-white font-bold px-6 py-3 border-4 border-black uppercase tracking-widest relative;
+  @apply bg-accent text-white font-bold px-6 py-3 border-4 border-black uppercase tracking-widest relative overflow-hidden;
   box-shadow: 4px 4px 0px 0px #000;
+  transition: all 0.2s ease;
+}
+
+.manga-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.manga-button:hover::after {
+  width: 300px;
+  height: 300px;
 }
 
 .manga-button:hover {
@@ -78,4 +169,160 @@ body {
     rgba(255, 0, 0, 0.05) 10px,
     rgba(255, 0, 0, 0.05) 11px
   );
+  animation: speed-dash 20s linear infinite;
+}
+
+/* === New Manga-Themed Classes === */
+
+/* Styled input for manga theme */
+.manga-input {
+  @apply bg-zinc-900 text-white border-4 border-zinc-700 px-4 py-3 font-bold uppercase tracking-wider text-sm;
+  @apply transition-all duration-200;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.5);
+}
+
+.manga-input:focus {
+  @apply border-accent outline-none;
+  box-shadow: 3px 3px 0px 0px var(--accent);
+}
+
+.manga-input::placeholder {
+  @apply text-zinc-500 normal-case;
+}
+
+/* Styled select for manga theme */
+.manga-select {
+  @apply bg-zinc-900 text-white border-4 border-zinc-700 px-4 py-3 font-bold uppercase tracking-wider text-sm appearance-none cursor-pointer;
+  @apply transition-all duration-200;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.5);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ff0000' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+.manga-select:focus {
+  @apply border-accent outline-none;
+  box-shadow: 3px 3px 0px 0px var(--accent);
+}
+
+/* Accent glow effect */
+.glow-accent {
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3), 0 0 40px rgba(255, 0, 0, 0.1);
+}
+
+.glow-accent-strong {
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5), 0 0 60px rgba(255, 0, 0, 0.2);
+}
+
+/* Text glow */
+.text-glow {
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.5), 0 0 30px rgba(255, 0, 0, 0.2);
+}
+
+/* Animated nav underline */
+.nav-link {
+  @apply relative pb-1 transition-colors duration-200;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}
+
+/* Drag zone pulse */
+.drag-zone-pulse {
+  animation: border-pulse 2s ease-in-out infinite;
+}
+
+.drag-zone-pulse:hover {
+  animation: none;
+  border-color: var(--accent);
+}
+
+/* Processing speed lines overlay */
+.processing-lines {
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 8px,
+    rgba(255, 0, 0, 0.08) 8px,
+    rgba(255, 0, 0, 0.08) 9px
+  );
+  animation: speed-dash 3s linear infinite;
+}
+
+/* Floating kanji background decoration */
+.kanji-float {
+  animation: kanji-drift 8s ease-in-out infinite;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-muted);
+  border: 1px solid #000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Manga panel border style */
+.manga-panel {
+  @apply border-4 border-black relative;
+  box-shadow: var(--manga-shadow);
+}
+
+.manga-panel::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+  pointer-events: none;
+}
+
+.manga-panel:hover::before {
+  border-color: var(--accent);
+}
+
+/* Range slider styling */
+input[type="range"].manga-range {
+  @apply appearance-none w-full h-2 bg-zinc-800 cursor-pointer;
+  border: 2px solid #333;
+}
+
+input[type="range"].manga-range::-webkit-slider-thumb {
+  @apply appearance-none w-5 h-5 bg-accent cursor-pointer;
+  border: 3px solid #000;
+  box-shadow: 2px 2px 0px 0px #000;
+}
+
+input[type="range"].manga-range::-webkit-slider-thumb:hover {
+  @apply bg-white;
 }
