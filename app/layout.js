@@ -31,7 +31,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <title>VanillaPDF | Manga Edition</title>
-        <meta name="description" content="The most powerful PDF editor in the anime multiverse." />
+        <meta
+          name="description"
+          content="The most powerful PDF editor in the anime multiverse."
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground min-h-screen relative`}
@@ -40,11 +43,34 @@ export default function RootLayout({ children }) {
         <div className="fixed inset-0 speed-lines pointer-events-none z-0 opacity-10"></div>
 
         {/* Floating kanji background decorations */}
-        <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none" aria-hidden="true">
-          <span className="absolute top-[15%] left-[8%] text-[12rem] font-black text-white/2 kanji-float" style={{ animationDelay: "0s" }}>戦</span>
-          <span className="absolute top-[45%] right-[5%] text-[10rem] font-black text-white/2 kanji-float" style={{ animationDelay: "2s" }}>力</span>
-          <span className="absolute bottom-[20%] left-[60%] text-[14rem] font-black text-white/2 kanji-float" style={{ animationDelay: "4s" }}>魂</span>
-          <span className="absolute top-[70%] left-[20%] text-[8rem] font-black text-accent/2 kanji-float" style={{ animationDelay: "6s" }}>炎</span>
+        <div
+          className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none"
+          aria-hidden="true"
+        >
+          <span
+            className="absolute top-[15%] left-[8%] text-[12rem] font-black text-white/2 kanji-float"
+            style={{ animationDelay: "0s" }}
+          >
+            戦
+          </span>
+          <span
+            className="absolute top-[45%] right-[5%] text-[10rem] font-black text-white/2 kanji-float"
+            style={{ animationDelay: "2s" }}
+          >
+            力
+          </span>
+          <span
+            className="absolute bottom-[20%] left-[60%] text-[14rem] font-black text-white/2 kanji-float"
+            style={{ animationDelay: "4s" }}
+          >
+            魂
+          </span>
+          <span
+            className="absolute top-[70%] left-[20%] text-[8rem] font-black text-accent/2 kanji-float"
+            style={{ animationDelay: "6s" }}
+          >
+            炎
+          </span>
         </div>
 
         <motion.header
@@ -57,18 +83,28 @@ export default function RootLayout({ children }) {
           animate={{ y: 0 }}
           transition={{ type: "spring", stiffness: 200, damping: 20 }}
         >
-          <Link href="/" className="group" onClick={() => setMobileMenuOpen(false)}>
+          <Link
+            href="/"
+            className="group"
+            onClick={() => setMobileMenuOpen(false)}
+          >
             <motion.h2
               className="text-3xl md:text-4xl font-black italic tracking-tighter text-white group-hover:text-accent transition-colors"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
               VANILLA
-              <span className="text-accent group-hover:text-white transition-colors">PDF</span>
+              <span className="text-accent group-hover:text-white transition-colors">
+                PDF
+              </span>
               <motion.span
                 className="text-xs align-top ml-2 bg-accent text-white px-1 not-italic tracking-normal inline-block"
                 animate={{ rotate: [0, -2, 2, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
                 バニラ
               </motion.span>
@@ -92,7 +128,11 @@ export default function RootLayout({ children }) {
             whileTap={{ scale: 0.9 }}
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </motion.button>
         </motion.header>
 
@@ -160,10 +200,10 @@ export default function RootLayout({ children }) {
           <p className="text-xs uppercase tracking-[0.5em] text-white/50 relative z-10">
             Made with 100% pure adrenaline
           </p>
-          <p className="mt-8 text-[10px] text-white/20 relative z-10">
+          <p className="mt-8 text-[12px] text-white/70 relative z-10">
             &copy; 2026 VanillaPDF - All rights reserved in every timeline.
           </p>
-          <p className="mt-4 text-[8px] text-white/20 relative z-10">
+          <p className="mt-4 text-[10px] text-white/70 relative z-10">
             This is a fan-made project and is not affiliated with any official
             manga or anime properties.
           </p>
