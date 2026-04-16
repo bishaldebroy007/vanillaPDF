@@ -62,3 +62,9 @@ Most PDF editors are bloated, slow, or compromise your privacy by uploading file
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## Security
+
+We take security and privacy seriously. See [SECURITY.md](SECURITY.md) for more information.
