@@ -1,50 +1,10 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import {
-  Combine,
-  Scissors,
-  Image as ImageIcon,
-  Zap,
-  ArrowRight,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useRef } from "react";
-
-const tools = [
-  {
-    id: "merge",
-    name: "Merge PDF",
-    description: "Combine multiple PDF files into one master document.",
-    icon: Combine,
-    color: "bg-red-500",
-    kanji: "結合",
-  },
-  {
-    id: "split",
-    name: "Split PDF",
-    description: "Extract pages or split your PDF into separate files.",
-    icon: Scissors,
-    color: "bg-zinc-800",
-    kanji: "分割",
-  },
-  {
-    id: "pdf-to-image",
-    name: "PDF to Image",
-    description: "Convert each page of your PDF into high-quality images.",
-    icon: ImageIcon,
-    color: "bg-red-700",
-    kanji: "画像",
-  },
-  {
-    id: "compress",
-    name: "Compress PDF",
-    description: "Reduce the file size of your PDF without losing quality.",
-    icon: Zap,
-    color: "bg-zinc-900",
-    kanji: "圧縮",
-  },
-];
+import { tools } from "@/lib/tools";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 60, rotateX: -15 },
@@ -129,7 +89,7 @@ function ToolCard({ tool, index }) {
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
     >
-      <Link href={`/tools/${tool.id}`}>
+      <Link href={`/tools/${tool.id}`} aria-label={`Open ${tool.name}`}>
         <motion.div
           className="manga-card group p-8 flex flex-col items-center text-center h-full cursor-pointer overflow-hidden"
           whileHover={{

@@ -16,6 +16,8 @@ pnpm dev
 bun dev
 ```
 
+- **Tests:** `pnpm test:run` for unit tests, `pnpm test:e2e` for Playwright smoke tests.
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
@@ -31,7 +33,7 @@ Most PDF editors are bloated, slow, or compromise your privacy by uploading file
 - **Merge PDF (結合):** Combine multiple PDF files into one master document with ease.
 - **Split PDF (分割):** Extract pages or split your PDF into separate files instantly.
 - **PDF to Image (画像):** Convert each page of your PDF into high-quality PNG images.
-- **Compress PDF (圧縮):** Reduce file sizes without losing the "Main Character" energy.
+- **Compress PDF (圧縮):** Strip metadata and reduce PDF overhead. Browser-based optimization is limited compared to server-side tools.
 
 ## Aesthetic
 
